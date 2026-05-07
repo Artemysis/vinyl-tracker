@@ -1,0 +1,28 @@
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface-2) 55%, transparent);
+  color: var(--heading);
+  border-radius: var(--radius-md);
+  padding: 12px 12px;
+  outline: none;
+  box-shadow: var(--shadow-1);
+}
+
+.input:focus {
+  border-color: color-mix(in oklab, var(--accent) 65%, var(--border));
+  box-shadow:
+    0 0 0 4px color-mix(in oklab, var(--accent) 18%, transparent),
+    var(--shadow-2);
+}
+

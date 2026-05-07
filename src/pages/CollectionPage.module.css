@@ -1,0 +1,280 @@
+.wrap {
+  display: grid;
+  gap: 18px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  color: var(--heading);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  font-weight: 950;
+}
+
+.sub {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.grow {
+  flex: 1 1 240px;
+  min-width: 240px;
+}
+
+.folderCreateRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.folderGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.folderCard {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 80%, transparent);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  cursor: pointer;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+
+.folderCard:hover {
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+  transform: translateY(-1px);
+}
+
+.folderCardActive {
+  border-color: color-mix(in oklab, var(--accent) 70%, var(--border));
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 22%, transparent);
+}
+
+.folderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.folderTitle {
+  color: var(--heading);
+  font-weight: 800;
+}
+
+.folderActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.folderEditRow {
+  display: grid;
+  gap: 8px;
+}
+
+.folderNameInput {
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface-2) 55%, transparent);
+  color: var(--heading);
+}
+
+.folderPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.folderChip {
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface-2) 55%, transparent);
+  color: var(--heading);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.folderChipActive {
+  border-color: color-mix(in oklab, var(--accent) 70%, var(--border));
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 20%, transparent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 85%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(12px);
+  transition: transform 140ms ease, border-color 140ms ease;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+}
+
+.thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: color-mix(in oklab, var(--surface-2) 50%, transparent);
+  border: 1px solid var(--border);
+}
+
+.meta {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.name {
+  color: var(--heading);
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: -0.2px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.line {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.actions {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.controls {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  justify-items: end;
+  min-width: 150px;
+}
+
+.folderSelect {
+  width: 100%;
+  max-width: 180px;
+  border-radius: var(--radius-md);
+  padding: 10px 38px 10px 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface-2) 55%, transparent);
+  color: var(--heading);
+  box-shadow: var(--shadow-1);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 2px),
+    calc(100% - 12px) calc(50% - 2px);
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.folderSelect:hover {
+  border-color: color-mix(in oklab, var(--accent) 30%, var(--border));
+}
+
+.folderSelect:focus {
+  outline: none;
+  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent), var(--shadow-1);
+}
+
+.folderSelect option {
+  background: #121824;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (prefers-color-scheme: light) {
+  .folderSelect option {
+    background: #ffffff;
+    color: rgba(15, 18, 28, 0.92);
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .folderGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .controls {
+    grid-column: 1 / -1;
+    justify-items: stretch;
+    min-width: 0;
+  }
+
+  .folderSelect {
+    max-width: none;
+  }
+}

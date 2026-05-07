@@ -1,0 +1,36 @@
+.card {
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 85%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(12px);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.15px;
+  color: var(--heading);
+}
+
+.subtitle {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.body {
+  display: grid;
+  gap: 10px;
+}
+

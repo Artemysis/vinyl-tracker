@@ -1,0 +1,18 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface-2) 60%, transparent);
+  color: var(--heading);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.accent {
+  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+}
+

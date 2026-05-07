@@ -1,0 +1,174 @@
+.wrap {
+  display: grid;
+  gap: 18px;
+}
+
+.title {
+  margin: 0;
+  color: var(--heading);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  font-weight: 950;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.grow {
+  flex: 1 1 auto;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 860px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 85%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(12px);
+  transition: transform 140ms ease, border-color 140ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+}
+
+.thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: color-mix(in oklab, var(--surface-2) 50%, transparent);
+  border: 1px solid var(--border);
+}
+
+.meta {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.name {
+  color: var(--heading);
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: -0.2px;
+  line-height: 1.15;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(10 12 16 / 58%);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  z-index: 90;
+  padding: 16px;
+}
+
+.modalCard {
+  width: min(440px, 100%);
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklab, var(--surface) 90%, transparent);
+  box-shadow: var(--shadow-2);
+  padding: 16px;
+}
+
+.modalTitle {
+  margin: 0;
+  color: var(--heading);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.folderSelect {
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 12px 38px 12px 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface-2) 55%, transparent);
+  color: var(--heading);
+  box-shadow: var(--shadow-1);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 2px),
+    calc(100% - 12px) calc(50% - 2px);
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.folderSelect:hover {
+  border-color: color-mix(in oklab, var(--accent) 30%, var(--border));
+}
+
+.folderSelect:focus {
+  outline: none;
+  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent), var(--shadow-1);
+}
+
+.folderSelect option {
+  background: #121824;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (prefers-color-scheme: light) {
+  .folderSelect option {
+    background: #ffffff;
+    color: rgba(15, 18, 28, 0.92);
+  }
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
